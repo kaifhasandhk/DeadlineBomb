@@ -1,0 +1,268 @@
+/* --- Task List & Task Item - Dark Glassy Layout --- */
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.8rem;
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+/* --- Task Action Buttons (Dark Mode + Glassy) --- */
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+  flex-grow: 1; /* Allows this container to grow and fill space */
+  min-width: 160px; /* Prevents buttons from being squeezed too much */
+}
+
+/* --- Attachment Upload Form (Dark Glass) --- */
+.upload-form-container {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-radius: 14px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  color: #e0e0e0;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+}
+
+.upload-form-container h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #f5f5f5;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(40,40,40,0.6);
+  color: #ddd;
+}
+
+.upload-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, rgba(46,204,113,0.9), rgba(39,174,96,0.7));
+}
+.upload-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(46,204,113,1), rgba(39,174,96,0.9));
+  box-shadow: 0 0 15px rgba(46,204,113,0.8);
+  transform: translateY(-3px);
+}
+.upload-btn:disabled {
+  background: rgba(80,80,80,0.6);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.cancel-upload-btn {
+  background: linear-gradient(135deg, rgba(149,165,166,0.8), rgba(127,140,141,0.6));
+}
+.cancel-upload-btn:hover {
+  background: linear-gradient(135deg, rgba(149,165,166,1), rgba(127,140,141,0.9));
+  box-shadow: 0 0 15px rgba(149,165,166,0.6);
+  transform: translateY(-3px);
+}
+
+.upload-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #e57373;
+}
+
+
+/* --- Attachment Display Styles (Dark Glass) --- */
+.task-attachment-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+.task-attachment-info p {
+  margin: 0;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.attachment-link {
+  color: #4da6ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+.attachment-link:hover {
+  color: #82c6ff;
+  text-decoration: underline;
+}
+
+.delete-attachment-btn {
+  background: linear-gradient(135deg, rgba(231,76,60,0.8), rgba(192,57,43,0.6));
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+.delete-attachment-btn:hover {
+  background: linear-gradient(135deg, rgba(231,76,60,1), rgba(192,57,43,0.8));
+  box-shadow: 0 0 15px rgba(231,76,60,0.7);
+}
+
+/* === Filter and Sort Controls === */
+.filter-sort-controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.control-group label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+.control-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #e2e8f0;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  transition: border-color 0.2s ease;
+}
+.control-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* === Two-Column Layout & Legend Card === */
+.course-page-main-layout {
+  display: flex;
+  gap: 1.5rem; /* Reduced gap */
+  align-items: flex-start;
+  margin-bottom: 2.5rem; /* Reduced margin */
+}
+.course-page-main-layout > .form-container {
+  flex: 2;
+  margin: 0; /* Override the global auto margins to align left */
+  padding: 1.5rem; /* ADDED: Page-specific smaller padding */
+}
+.course-page-main-layout > .task-legend-card {
+  flex: 1;
+}
+.task-legend-card {
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-radius: 18px;
+  padding: 1.5rem; /* Reduced padding */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  position: sticky;
+  top: 100px;
+}
+.task-legend-card h3 {
+  color: #f1f5f9;
+  font-size: 1.5rem; /* Reduced font size */
+  margin-top: 0;
+  text-align: center;
+}
+.legend-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0; /* Reduced margin */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* Reduced gap */
+}
+.legend-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem; /* Reduced font size */
+  color: #cbd5e1;
+}
+.legend-color-dot {
+  display: inline-block;
+  width: 16px; /* Reduced size */
+  height: 16px; /* Reduced size */
+  border-radius: 50%;
+  margin-right: 0.75rem; /* Reduced margin */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+/* === START OF FIX === */
+.legend-color-dot.safe { background-color: rgba(34, 197, 94, 0.5); }
+.legend-color-dot.upcoming { background-color: rgba(245, 158, 11, 0.5); }
+.legend-color-dot.urgent { background-color: rgba(239, 68, 68, 0.5); }
+.legend-color-dot.expired { background-color: rgba(75, 85, 99, 0.5); } /* Changed from red to gray */
+.legend-color-dot.completed { background-color: rgba(59, 130, 246, 0.5); }
+/* === END OF FIX === */
+.legend-note {
+  font-size: 0.9rem; /* Reduced font size */
+  font-style: italic;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* === Responsive adjustments for CoursePage === */
+@media (max-width: 1200px) {
+  .course-page-main-layout {
+    flex-direction: column;
+  }
+  .task-legend-card {
+    width: 100%;
+    box-sizing: border-box;
+    position: static;
+  }
+}
+

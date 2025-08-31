@@ -1,0 +1,65 @@
+/* Dashboard Page Specific Styles */
+
+.dashboard-title {
+  margin-top: 1rem;
+  margin-bottom: 3rem; /* Give the title some space */
+}
+
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+/* === START OF FIX: Styling for the Link Wrapper === */
+/* This is the key change. It removes all default link styling. */
+.stat-card-link {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Makes text inside the link inherit its color */
+  display: block; /* Ensures the entire card area is clickable */
+  border-radius: 18px; /* Match the card's radius for the hover effect */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* The hover effect is now on the link, which is the interactive element */
+.stat-card-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+/* === END OF FIX === */
+
+
+.stat-card {
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-radius: 18px;
+  padding: 2.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  text-align: center;
+  /* The transition is now on the link wrapper, so it's not needed here */
+}
+
+.stat-card h3 {
+  font-size: 1.6rem;
+  color: #cbd5e1;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.stat-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+/* Specific colors for stat cards */
+.active-tasks .stat-value { color: #3b82f6; } /* Blue */
+.completed-tasks .stat-value { color: #22c55e; } /* Green */
+.urgent-tasks .stat-value { color: #ef4444; } /* Red */
+.total-tasks .stat-value { color: #94a3b8; } /* Grey */
+

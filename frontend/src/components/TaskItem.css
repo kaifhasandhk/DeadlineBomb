@@ -1,0 +1,150 @@
+/* Main link container for the task item */
+.task-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #e2e8f0;
+  position: relative;
+
+  /* Glassmorphism */
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.task-item-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Urgency Colors */
+.task-item-link.urgent { background-color: rgba(191, 38, 38, 0.35); border-color: #ef4444; }
+.task-item-link.upcoming { background-color: rgba(217, 119, 6, 0.35); border-color: #f59e0b; }
+.task-item-link.safe { background-color: rgba(21, 128, 61, 0.35); border-color: #22c55e; }
+.task-item-link.completed { background-color: rgba(37, 99, 235, 0.35); border-color: #3b82f6; }
+.task-item-link.expired { background-color: rgba(75, 85, 99, 0.35); border-color: #6b7280; }
+
+/* Left side content */
+.task-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.task-item-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 1000;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-item-deadline {
+  margin: 10;
+  font-size: 0.9rem;
+  color: #dee1e5ff;
+}
+
+
+.task-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* tighter gap between buttons */
+}
+
+.task-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;       /* smaller circle */
+  height: 30px;      /* smaller circle */
+  border-radius: 50%; /* circle shape */
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem; /* size of ✓ and ✕ */
+  font-weight: bold;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.7);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* no shadow on hover, just color */
+.task-action-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Complete ✓ */
+.complete-btn {
+  background-color: rgba(34, 197, 94, 0.8); /* green */
+}
+.complete-btn:hover {
+  background-color: rgba(34, 197, 94, 1);
+}
+
+/* Delete ✕ */
+.delete-btn {
+  background-color: rgba(239, 68, 68, 0.8); /* red */
+}
+.delete-btn:hover {
+  background-color: rgba(239, 68, 68, 1);
+}
+
+/* === END OF FIX === */
+
+
+/* Circular Timer Styles */
+.task-item-timer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-ring-bg {
+  fill: transparent;
+  stroke: rgba(15, 23, 42, 0.5);
+  stroke-width: 12;
+}
+
+.progress-ring-circle {
+  fill: transparent;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.35s linear; /* Smoother transition */
+}
+
+.urgent .progress-ring-circle { stroke: #ef4444; }
+.upcoming .progress-ring-circle { stroke: #f59e0b; }
+.safe .progress-ring-circle { stroke: #22c55e; }
+.completed .progress-ring-circle { stroke: #3b82f6; }
+.expired .progress-ring-circle { stroke: #6b7280; }
+
+.timer-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+

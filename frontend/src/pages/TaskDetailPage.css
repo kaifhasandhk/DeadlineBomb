@@ -1,0 +1,133 @@
+/* Main container for the entire task detail view */
+.task-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header section with title and back link */
+.task-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem;
+}
+
+.task-detail-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.back-to-course-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #7dd3fc;
+  text-decoration: none;
+  background-color: rgba(14, 116, 144, 0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(14, 116, 144, 0.5);
+  transition: all 0.2s ease;
+}
+
+.back-to-course-link:hover {
+  background-color: rgba(14, 116, 144, 0.5);
+  color: #fff;
+}
+
+/* Main two-column grid layout */
+.task-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Main content is twice as wide as the sidebar */
+  gap: 2rem;
+}
+
+/* General card style for all sections */
+.task-detail-card {
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+}
+
+.task-detail-card h3 {
+  font-size: 1.5rem;
+  color: #f1f5f9;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.task-detail-main p {
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* Styling for the details list in the sidebar */
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #cbd5e1;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.details-list li:last-child {
+  border-bottom: none;
+}
+
+.details-list li strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.loading-text, .error-text {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 4rem;
+}
+
+.error-text {
+  color: #f87171;
+}
+
+/* Style for the 'Edit Task' button in the sidebar */
+.edit-task-sidebar-btn {
+  /* Use global button styles but with specific additions */
+  width: 100%;
+  margin-top: 1.5rem; /* Space above the button */
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.8), rgba(239, 108, 0, 0.6)); /* Orange gradient */
+}
+
+.edit-task-sidebar-btn:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 1), rgba(239, 108, 0, 0.8));
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.7);
+}
+
+
+/* Responsive adjustments for the detail page */
+@media (max-width: 992px) {
+  .task-detail-grid {
+    grid-template-columns: 1fr; /* Stack columns on tablets and mobile */
+  }
+}
+
